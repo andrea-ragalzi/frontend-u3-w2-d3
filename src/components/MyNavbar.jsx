@@ -1,5 +1,6 @@
 import '../style/MyNavbar.scss'
 import { Search, Bell } from 'react-bootstrap-icons';
+import { Link, useLocation } from 'react-router-dom'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -7,6 +8,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 function MyNavbar() {
+  const location = useLocation();
+  console.log('LOCATION OBJECT', location)
   return (
     <Container fluid>
       <Navbar bg="dark" variant='dark' expand="lg" className='m3 my-navbar row'>
@@ -16,11 +19,46 @@ function MyNavbar() {
           </Col>
           <Col xs={{ span: 12, order: 2 }} sm={{ span: 8, order: 1 }} lg={{ span: 8, order: 1 }}>
             <Nav className="me-auto">
-              <Nav.Link className='me-3 d-none d-lg-block' href="#">Home</Nav.Link>
-              <Nav.Link className='me-3' href="#">TV Shows</Nav.Link>
-              <Nav.Link href="#">Movies</Nav.Link>
-              <Nav.Link href="#">Recently Added</Nav.Link>
-              <Nav.Link className='me-3 d-none d-lg-block' href="#">My List</Nav.Link>
+              <Link
+                className={
+                  location.pathname === '/'
+                    ? 'nav-link active me-3 d-none d-lg-block'
+                    : 'nav-link me-3 d-none d-lg-block'
+                }
+                to="/"
+              >Home</Link>
+              <Link
+                className={
+                  location.pathname === '/tv-shows'
+                    ? 'nav-link active me-3 d-none d-lg-block'
+                    : 'nav-link me-3 d-none d-lg-block'
+                }
+                to="/tv-shows"
+              >TV Shows</Link>
+              <Link
+                className={
+                  location.pathname === '/movies'
+                    ? 'nav-link active me-3 d-none d-lg-block'
+                    : 'nav-link me-3 d-none d-lg-block'
+                }
+                to="/movies"
+              >Movies</Link>
+              <Link
+                className={
+                  location.pathname === '/recently-added'
+                    ? 'nav-link me-3 d-none d-lg-block'
+                    : 'nav-link me-3 d-none d-lg-block'
+                }
+                to="/recently-added"
+              >Recently Added</Link>
+              <Link
+                className={
+                  location.pathname === '/my-list'
+                    ? 'nav-link me-3 d-none d-lg-block'
+                    : 'nav-link me-3 d-none d-lg-block'
+                }
+                to="/my-list"
+              >My List</Link>
             </Nav>
           </Col>
           <Col xs={{ span: 4, order: 1 }} sm={{ span: 2, order: 2 }} lg={{ span: 2, order: 2 }}>

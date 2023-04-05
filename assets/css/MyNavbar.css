@@ -1,0 +1,10 @@
+.my-navbar .img-logo {
+  width: 5em;
+}
+.my-navbar .img-avatar {
+  width: 2em;
+}
+.my-navbar .navbar-nav {
+  display: flex !important;
+  flex-direction: row !important;
+}/*# sourceMappingURL=MyNavbar.css.map */

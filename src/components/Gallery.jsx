@@ -35,7 +35,7 @@ class Gallery extends Component {
                 })
             }
         } catch (error) {
-            console.err(error);
+            console.log(error);
             this.setState({
                 isLoading: false,
                 isError: true,
@@ -48,6 +48,7 @@ class Gallery extends Component {
     }
 
     render() {
+        console.log(this.props.source);
         const responsive = {
             xxl: {
                 breakpoint: { max: 3000, min: 1400 },

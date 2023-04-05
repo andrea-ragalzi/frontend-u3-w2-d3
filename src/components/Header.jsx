@@ -2,7 +2,6 @@ import MyNavbar from "./MyNavbar";
 
 function MyHeader() {
     return (
-        
         <MyNavbar />
     );
 }
